@@ -8,14 +8,13 @@ cask "tiempo" do
   homepage "https://github.com/blackboxprojects/tiempo"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "tiempo.app"
 
   # tiempo is signed ad hoc, not notarized, so macOS would block the first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/tiempo.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/tiempo.app"]
   end
 
   uninstall quit: "app.tiempo"

@@ -1,6 +1,6 @@
 cask "tiempo" do
-  version "1.0"
-  sha256 "b9bc08b86bb340066a8d976d73aaf24a2720898df0a3de24a038f3fdf8d55966"
+  version "1.1"
+  sha256 "8158ac7eaeb977445be2c7de111b9bb6ed0eedaa93233d02afaaf0e3c105222e"
 
   url "https://github.com/blackboxprojects/tiempo/releases/download/v#{version}/tiempo-#{version}.dmg"
   name "tiempo"
